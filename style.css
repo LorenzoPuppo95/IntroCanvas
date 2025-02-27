@@ -13,18 +13,18 @@ body{
 
 @keyframes colorCycle {
     0% {
-        background-color: rgba(223, 163, 141, 0.32);
+        background-color: rgb(31, 31, 31);
     }
     25% {
-        background-color: rgba(156, 184, 235, 0.32);
+        background-color: rgb(31, 31, 31);
     }
     50% {
-        background-color: rgba(176, 231, 176, 0.32);
+        background-color: rgb(31, 31, 31);
     }
     75% {
-        background-color: rgba(116, 111, 82, 0.32);
+        background-color: rgb(31, 31, 31);
     }
     100% {
-        background-color: rgba(105, 80, 71, 0.32);
+        background-color: rgb(31, 31, 31);
     }
 }
