@@ -1,7 +1,4 @@
-
-
 const canvas = document.getElementById("myCanvas");
-
 const ctx = canvas.getContext("2d");
 
 // ctx.fillStyle = "red";
@@ -12,7 +9,7 @@ const ctx = canvas.getContext("2d");
 
 // ctx.strokeStyle = "crimson"
 // ctx.lineWidth = 4
-// ctx.strokeRect(450,50,150,300)ù
+// ctx.strokeRect(450,50,150,300);
 
 // for (let i = 0; i < 100; i++) {
 //     const originX= Math.random()*600;
@@ -216,7 +213,6 @@ const ctx = canvas.getContext("2d");
 
 //     setInterval(() => {
     
-
 //         const colorR = Math.random() * 255;
 //         const colorG = Math.random() * 255;
 //         const colorB = Math.random() * 255;
@@ -232,311 +228,55 @@ const ctx = canvas.getContext("2d");
 
 // }, 1000);
 
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
-
+function drawPokeball(x, y, radius) {
+    // metà superiore
     ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(600, 600);
-    ctx.lineTo(500, 600);
-    ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
+    ctx.arc(x, y, radius, 0, Math.PI, true);
+    ctx.fillStyle = "red";
     ctx.fill();
-    
-}, 800);
+    ctx.closePath();
 
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
-
+    // metà inferiore
     ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(500, 600);
-    ctx.lineTo(400, 600);
-    ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
+    ctx.arc(x, y, radius, 0, Math.PI, false);
+    ctx.fillStyle = "white";
     ctx.fill();
-    
-}, 780);
+    ctx.closePath();
 
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
-
+    // linea orizzontale
     ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(400, 600);
-    ctx.lineTo(300, 600);
+    ctx.moveTo(x - radius, y);
+    ctx.lineTo(x + radius, y);
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
     ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-    ctx.fill();
-    
-}, 760);
 
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
-
+    // bordo esterno
     ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(0, 0);
-    ctx.lineTo(100, 0);
+    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    ctx.lineWidth = 8;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
     ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-    ctx.fill();
-    
-}, 740);
 
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
-
+    // bordino interno
     ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(100, 0);
-    ctx.lineTo(200, 0);
-    ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
+    ctx.arc(x, y, radius / 4, 0, 2 * Math.PI);
+    ctx.fillStyle = "black";
     ctx.fill();
-    
-}, 720);
+    ctx.closePath();
 
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
-
+    // pulsante bianco
     ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(200, 0);
-    ctx.lineTo(300, 0);
-    ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
+    ctx.arc(x, y, radius / 6, 0, 2 * Math.PI);
+    ctx.fillStyle = "white";
     ctx.fill();
-    
-}, 700);
-
-// setInterval(() => {
-    
-//     const colorR = Math.random() * 255;
-//     const colorG = Math.random() * 255;
-//     const colorB = Math.random() * 255;
-//     const colorA = Math.random();
-
-//     ctx.beginPath();
-//     ctx.moveTo(300, 300);
-//     ctx.lineTo(0, 600);
-//     ctx.lineTo(100, 600);
-//     ctx.closePath();
-//     ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-//     ctx.fill();
-    
-// }, 1000);
-
-// setInterval(() => {
-    
-//     const colorR = Math.random() * 255;
-//     const colorG = Math.random() * 255;
-//     const colorB = Math.random() * 255;
-//     const colorA = Math.random();
-
-//     ctx.beginPath();
-//     ctx.moveTo(300, 300);
-//     ctx.lineTo(100, 600);
-//     ctx.lineTo(200, 600);
-//     ctx.closePath();
-//     ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-//     ctx.fill();
-    
-// }, 800);
-
-// setInterval(() => {
-    
-//     const colorR = Math.random() * 255;
-//     const colorG = Math.random() * 255;
-//     const colorB = Math.random() * 255;
-//     const colorA = Math.random();
-
-//     ctx.beginPath();
-//     ctx.moveTo(300, 300);
-//     ctx.lineTo(200, 600);
-//     ctx.lineTo(300, 600);
-//     ctx.closePath();
-//     ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-//     ctx.fill();
-    
-// }, 600);
-
-// setInterval(() => {
-    
-//     const colorR = Math.random() * 255;
-//     const colorG = Math.random() * 255;
-//     const colorB = Math.random() * 255;
-//     const colorA = Math.random();
-
-//     ctx.beginPath();
-//     ctx.moveTo(300, 300);
-//     ctx.lineTo(600, 0);
-//     ctx.lineTo(500, 0);
-//     ctx.closePath();
-//     ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-//     ctx.fill();
-    
-// }, 900);
-
-// setInterval(() => {
-    
-//     const colorR = Math.random() * 255;
-//     const colorG = Math.random() * 255;
-//     const colorB = Math.random() * 255;
-//     const colorA = Math.random();
-
-//     ctx.beginPath();
-//     ctx.moveTo(300, 300);
-//     ctx.lineTo(500, 0);
-//     ctx.lineTo(400, 0);
-//     ctx.closePath();
-//     ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-//     ctx.fill();
-    
-// }, 700);
-
-// setInterval(() => {
-    
-//     const colorR = Math.random() * 255;
-//     const colorG = Math.random() * 255;
-//     const colorB = Math.random() * 255;
-//     const colorA = Math.random();
-
-//     ctx.beginPath();
-//     ctx.moveTo(300, 300);
-//     ctx.lineTo(400, 0);
-//     ctx.lineTo(300, 0);
-//     ctx.closePath();
-//     ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-//     ctx.fill();
-    
-// }, 500);
-
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
-
-    ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(0, 600);
-    ctx.lineTo(0, 500);
     ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-    ctx.fill();
-    
-}, 800);
+}
 
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
+// pulisci canvas
+ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(0, 500);
-    ctx.lineTo(0, 400);
-    ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-    ctx.fill();
-    
-}, 780);
-
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
-
-    ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(0, 400);
-    ctx.lineTo(0, 300);
-    ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-    ctx.fill();
-    
-}, 760);
-
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
-
-    ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(600, 0);
-    ctx.lineTo(600, 100);
-    ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-    ctx.fill();
-    
-}, 740);
-
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
-
-    ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(600, 100);
-    ctx.lineTo(600, 200);
-    ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-    ctx.fill();
-    
-}, 720);
-
-setInterval(() => {
-    
-    const colorR = Math.random() * 255;
-    const colorG = Math.random() * 255;
-    const colorB = Math.random() * 255;
-    const colorA = Math.random();
-
-    ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(600, 200);
-    ctx.lineTo(600, 300);
-    ctx.closePath();
-    ctx.fillStyle = `rgba(${colorR},${colorG},${colorB},${colorA})`;
-    ctx.fill();
-    
-}, 700);
-
-
-
+// disegna la pokeball
+drawPokeball(canvas.width / 2, canvas.height / 2, 100);
