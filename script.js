@@ -275,8 +275,114 @@ function drawPokeball(x, y, radius) {
     ctx.closePath();
 }
 
+function drawGreatBall(x, y, radius) {
+    // metà superiore
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI, true);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    ctx.closePath();
+
+    // metà inferiore
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI, false);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
+
+    // linea orizzontale
+    ctx.beginPath();
+    ctx.moveTo(x - radius, y);
+    ctx.lineTo(x + radius, y);
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+    ctx.closePath();
+
+    // bordo esterno
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    ctx.lineWidth = 8;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+    ctx.closePath();
+
+    // bordino interno
+    ctx.beginPath();
+    ctx.arc(x, y, radius / 4, 0, 2 * Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath();
+
+    // pulsante bianco
+    ctx.beginPath();
+    ctx.arc(x, y, radius / 6, 0, 2 * Math.PI);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
+
+    // strisce rosse
+    // boh un bordello
+}
+
+function drawUltraBall(x, y, radius) {
+    // metà superiore
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI, true);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath();
+
+    // metà inferiore
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI, false);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
+
+    // linea orizzontale
+    ctx.beginPath();
+    ctx.moveTo(x - radius, y);
+    ctx.lineTo(x + radius, y);
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+    ctx.closePath();
+
+    // bordo esterno
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    ctx.lineWidth = 8;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+    ctx.closePath();
+
+    // bordino interno
+    ctx.beginPath();
+    ctx.arc(x, y, radius / 4, 0, 2 * Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath();
+
+    // pulsante bianco
+    ctx.beginPath();
+    ctx.arc(x, y, radius / 6, 0, 2 * Math.PI);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
+
+    // strisce gialle
+    // bordello pure questo
+}
+
 // pulisci canvas
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-// disegna la pokeball
-drawPokeball(canvas.width / 2, canvas.height / 2, 100);
+// disegna la poke ball
+drawPokeball(canvas.width / 6, canvas.height / 2, 100);
+
+// disegna la mega ball
+drawGreatBall((canvas.width / 6) * 3, canvas.height / 2, 100);
+
+// disegna la ultra ball
+drawUltraBall((canvas.width / 6) * 5, canvas.height / 2, 100);
