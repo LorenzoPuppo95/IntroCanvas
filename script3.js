@@ -112,7 +112,7 @@ function gameLoop(elapsedTime) {
 
 function start() {
     setUp(),
-        requestAnimationFrame(gameLoop);
+    requestAnimationFrame(gameLoop);
 }
 
 start();

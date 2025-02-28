@@ -7,7 +7,7 @@ body{
 }
 
 .canvas{
-    background-color: white;
+    background-color: rgb(185, 185, 185);
     animation: colorCycle 20s infinite alternate-reverse;
 }
 
