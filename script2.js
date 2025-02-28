@@ -1,47 +1,72 @@
+
 let entities = [];
 let canvas;
 let ctx;
 
+
 function setUp() {
-    canvas = document.getElementById("my-canvas-2");
-    ctx = canvas.getContext("2d");
-    
-    for (let i = 0; i < 100; i++) {
-        const rect={};
-        rect.width = Math.random() * 200;
-        rect.height = Math.random() * 200;
+    canvas = document.getElementById('my-canvas');
+    ctx = canvas.getContext('2d');
+
+    for (let i = 0; i < 1000; i++) {
+        const rect = {};
+        rect.width = Math.random() * 10;
+        rect.height = Math.random() * 10;
         rect.originX = Math.random() * (600 - rect.width);
         rect.originY = Math.random() * (600 - rect.height);
+        rect.speedX = Math.round(Math.random() * 3) + 1;
         entities.push(rect);
-    }    
-    // console.log("setup");
+
+
+    }
+
+
 }
 
 function update() {
-    // rect.originX += 1;
-    // rect.originY += 1;
-    // console.log("update");
+
+    for (let i = 0; i < entities.length; i++) {
+        const rect = entities[i];
+        rect.originX += rect.speedX;
+        // rect.originX += 4;
+        // rect.originY += 4;
+        rect.originX = rect.originX % 600;
+        // rect.originY = rect.originY % 600;
+    }
+
+
+
 }
+
 
 function draw() {
+    // ctx.clearRect(0, 0, 600, 600);
+    ctx.fillStyle = " rgba(255,255,255,0.1)";
+    ctx.fillRect(0, 0, 600, 600);
+
+
+    ctx.fillStyle = "black";
     for (let i = 0; i < entities.length; i++) {
-        // ctx.clearRect(0,0,600,600);
-        const rect=entities[i];
-        ctx.fillRect(rect.originX, rect.originY, rect.width, rect.height);
+        const rect = entities[i];
+        ctx.fillRect(rect.originX, rect.originY, rect.width, rect.height)
     }
-    // console.log("draw");
+
 }
 
+
 function gameLoop(elapsedTime) {
-    // console.log(elapsedTime);
-    update();
-    draw();
+
+    update()
+    draw()
+
+
+
     requestAnimationFrame(gameLoop);
 }
 
 function start() {
-    setUp();
-    requestAnimationFrame(gameLoop);
+    setUp()
+    requestAnimationFrame(gameLoop)
 }
 
-start();
+start()
