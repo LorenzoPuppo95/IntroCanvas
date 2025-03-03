@@ -14,16 +14,16 @@ body{
 } */
 
 /* sfondo per la neve */
-.canvas{
+/* .canvas{
     background-color: rgb(185, 185, 185);
     animation: colorCycle 20s infinite alternate-reverse;
-}
+} */
 
 /* sfondo per rettangoli a scorrimento */
-/* .canvas{
+.canvas{
     background-color: rgb(255, 255, 255);
     animation: colorCycle 20s infinite alternate-reverse;
-} */
+}
 
 /* @keyframes colorCycle {
     0% {
